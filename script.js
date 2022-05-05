@@ -20,5 +20,15 @@ function saveToLocalStorage(event) {
       slot
     };
 
-    localStorage.setItem('userDetails',JSON.stringify(userDetailsObject))
+    localStorage.setItem(userDetailsObject.email, JSON.stringify(userDetailsObject));
+
+    showBookingsOnScreen(userDetailsObject);
+
+}
+
+
+function showBookingsOnScreen(user) {
+    const parentNode=document.getElementById('userBookings');
+    const childHTML = `<li> ${user.name} - ${user.email}- ${user.date}- ${user.slot} </li>`;
+    parentNode.innerHTML += childHTML;
 }

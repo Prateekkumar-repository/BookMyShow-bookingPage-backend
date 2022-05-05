@@ -6,9 +6,19 @@ function saveToLocalStorage(event) {
     const date = event.target.bookingDate.value;
     const slot = event.target.showSlot.value;
 
-    localStorage.setItem('name',name);
-    localStorage.setItem('email',email);
-    localStorage.setItem('number',number);
-    localStorage.setItem('date',date);
-    localStorage.setItem('slot', slot);
+    // localStorage.setItem('name',name);
+    // localStorage.setItem('email',email);
+    // localStorage.setItem('number',number);
+    // localStorage.setItem('date',date);
+    // localStorage.setItem('slot', slot);
+
+    const userDetailsObject = {
+      name,
+      email,
+      number,
+      date,
+      slot
+    };
+
+    localStorage.setItem('userDetails',JSON.stringify(userDetailsObject))
 }
